@@ -7,15 +7,15 @@ This project includes a Chrome Extension, a backend API, and OpenAI integration.
 %%{init: {'theme': 'neutral'}}%%
 actor User
 rectangle "Chrome Extension" as CE {
-    (Track Browsing Activity)
-    (Chat with Assistant)
+(Track Browsing Activity)
+(Chat with Assistant)
 }
 rectangle "Backend API" as BE {
-    (Process Query)
-    (Call OpenAI)
+(Process Query)
+(Call OpenAI)
 }
 rectangle "OpenAI API" as OA {
-    (Generate Response)
+(Generate Response)
 }
 User --> CE
 CE --> BE
