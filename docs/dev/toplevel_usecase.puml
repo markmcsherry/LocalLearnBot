@@ -1,0 +1,33 @@
+@startuml
+actor User
+rectangle "Chrome Extension" {
+    usecase "Track Browsing Activity" as U1
+    usecase "Open Chat Interface" as U2
+    usecase "Ask Question / Request Summary" as U3
+    usecase "Display AI Response" as U4
+}
+
+rectangle "Backend API" {
+    usecase "Process Query" as B1
+    usecase "Query OpenAI API" as B2
+    usecase "Return Response" as B3
+}
+
+rectangle "OpenAI API" {
+    usecase "Generate AI Response" as O1
+}
+
+User --> U1
+User --> U2
+User --> U3
+U4 --> User
+
+U1 --> B1 : "Send Browsing Context"
+U3 --> B1 : "Send Query & Context"
+B1 --> B2 : "Request AI Response"
+B2 --> O1
+O1 --> B2
+B2 --> B3 : "Return AI Result"
+B3 --> U4
+
+@enduml
