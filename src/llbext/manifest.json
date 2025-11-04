@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Learning Tracker Bot",
+  "version": "1.0",
+  "description": "Tracks your browsing for learning and chats about it.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Learning Bot"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

@@ -13,11 +13,11 @@ graph TD
 
     subgraph Backend_API ["Backend API"]
         BE1["Process Query"]
-        BE2["Query OpenAI API"]
+        BE2["Query Ollama API"]
         BE3["Return Response"]
     end
 
-    subgraph OpenAI_API ["OpenAI API"]
+    subgraph Ollama ["Local LLM (Ollama)"]
         OA1["Generate AI Response"]
     end
 
